@@ -1,25 +1,24 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
-const LeaderboardItem = ({ user, score, index }) => {
+function LeaderboardItem({ user, score, index }) {
   return (
-    <div className='w-full flex flex-row justify-between px-8 py-6 border border-gray-400 shadow-sm rounded-lg'>
-      <div className='flex flex-row justify-start items-center gap-5'>
-        <p className='font-semibold text-lg'>{index + 1}</p>
+    <div className="w-full flex flex-row justify-between px-8 py-6 border border-gray-400 shadow-sm rounded-lg">
+      <div className="flex flex-row justify-start items-center gap-5">
+        <p className="font-semibold text-lg">{index + 1}</p>
         <img
-          className='size-10 rounded-full bg-amber-400'
+          className="size-10 rounded-full bg-amber-400"
           src={user?.avatar}
           alt="User Avatar"
-        ></img>
-        <p className='font-semibold text-lg'>{user?.name}</p>
+        />
+        <p className="font-semibold text-lg">{user?.name}</p>
       </div>
-      <div className='flex flex-row justify-start items-center gap-5'>
-        <p className='text-lg font-semibold'>Skor: </p>
-        <p className='font-semibold text-xl text-[#3498DB]'>{score}</p>
+      <div className="flex flex-row justify-start items-center gap-5">
+        <p className="text-lg font-semibold">Skor: </p>
+        <p className="font-semibold text-xl text-[#3498DB]">{score}</p>
       </div>
     </div>
   );
-};
+}
 
 LeaderboardItem.propTypes = {
   user: PropTypes.shape({

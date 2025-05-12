@@ -1,12 +1,11 @@
-import React from 'react';
 import LoadingBar from 'react-redux-loading-bar';
 
-const Loading = () => {
+function Loading() {
   return (
-    <div className='sticky top-0'>
-      <LoadingBar showFastActions={true} />
+    <div className="sticky top-0">
+      <LoadingBar showFastActions />
     </div>
   );
-};
+}
 
 export default Loading;

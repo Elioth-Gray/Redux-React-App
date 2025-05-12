@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
-import { Route, Routes, Navigate, Router } from 'react-router-dom';
+import {
+  Route, Routes, Navigate,
+} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { asyncPreloadProcess } from './states/preload/action';
 import RegisterPage from './pages/RegisterPage';
@@ -23,37 +25,37 @@ function App() {
 
   return (
     <>
-      <Loading></Loading>
+      <Loading />
       <main>
         <Routes>
           <Route
-            path='/login'
-            element={authUser ? <Navigate to='/' replace /> : <LoginPage />}
+            path="/login"
+            element={authUser ? <Navigate to="/" replace /> : <LoginPage />}
           />
           <Route
-            path='/register'
-            element={authUser ? <Navigate to='/' replace /> : <RegisterPage />}
+            path="/register"
+            element={authUser ? <Navigate to="/" replace /> : <RegisterPage />}
           />
 
-          <Route path='/' element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route
-            path='/threads/:threadId'
+            path="/threads/:threadId"
             element={
-              !authUser ? <Navigate to='/login' replace /> : <ThreadPage />
+              !authUser ? <Navigate to="/login" replace /> : <ThreadPage />
             }
           />
 
-          <Route path='*' element={<Navigate to='/' replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
           <Route
-            path='/create'
+            path="/create"
             element={
-              !authUser ? <Navigate to='/login' replace /> : <CreateThread />
+              !authUser ? <Navigate to="/login" replace /> : <CreateThread />
             }
-          ></Route>
+          />
           <Route
-            path='/leaderboards'
-            element={<LeaderboardsPage></LeaderboardsPage>}
-          ></Route>
+            path="/leaderboards"
+            element={<LeaderboardsPage />}
+          />
         </Routes>
       </main>
     </>

@@ -1,26 +1,24 @@
-import React from 'react';
-import LeaderboardItem from './LeaderboardItem';
 import PropTypes from 'prop-types';
+import LeaderboardItem from './LeaderboardItem';
 
-const LeaderboardList = ({ leaderboards }) => {
+function LeaderboardList({ leaderboards }) {
   return (
-    <section className='w-full flex flex-col justify-start items-start gap-8'>
+    <section className="w-full flex flex-col justify-start items-start gap-8">
       {leaderboards?.length > 0 ? (
-        leaderboards?.map((leaderboard, index) => {
-          return (
-            <LeaderboardItem
-              key={leaderboard.id}
-              {...leaderboard}
-              index={index}
-            ></LeaderboardItem>
-          );
-        })
+        leaderboards?.map((leaderboard, index) => (
+          <LeaderboardItem
+            key={leaderboard.id}
+            user={leaderboard.user}
+            score={leaderboard.score}
+            index={index}
+          />
+        ))
       ) : (
-        <p className='text-gray-500'>Tidak ada leaderboards yang tersedia</p>
+        <p className="text-gray-500">Tidak ada leaderboards yang tersedia</p>
       )}
     </section>
   );
-};
+}
 
 LeaderboardList.propTypes = {
   leaderboards: PropTypes.arrayOf(
@@ -31,7 +29,7 @@ LeaderboardList.propTypes = {
         name: PropTypes.string.isRequired,
       }).isRequired,
       score: PropTypes.number.isRequired,
-    })
+    }),
   ).isRequired,
 };
 

@@ -1,10 +1,11 @@
-import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
-import './index.css';
+import { StrictMode } from 'react';
 import { Provider } from 'react-redux';
-import store from './states';
 import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+
+import App from './App';
+import store from './states';
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
@@ -13,5 +14,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <App />
       </StrictMode>
     </BrowserRouter>
-  </Provider>
+  </Provider>,
 );
