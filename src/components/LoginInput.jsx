@@ -26,7 +26,6 @@ function LoginInput({ login }) {
             placeholder="email@example.com"
             value={email}
             onChange={onEmailChange}
-            required
           />
         </label>
       </div>
@@ -41,7 +40,6 @@ function LoginInput({ login }) {
             placeholder="***********"
             value={password}
             onChange={onPasswordChange}
-            required
           />
         </label>
       </div>

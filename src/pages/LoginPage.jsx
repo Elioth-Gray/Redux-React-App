@@ -32,7 +32,7 @@ function LoginPage() {
         <p className="mt-4 text-sm w-full text-center">
           Belum punya akun?
           {' '}
-          <Link href="/register" className="text-[#3498DB]">
+          <Link to="/register" className="text-[#3498DB]">
             Daftar sekarang
           </Link>
         </p>
