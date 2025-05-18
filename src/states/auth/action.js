@@ -37,8 +37,10 @@ function asyncSetAuthUserCreator({ email, password }) {
 
 function asyncUnsetAuthUserCreator() {
   return (dispatch) => {
+    dispatch(showLoading());
     dispatch(unsetAuthUserCreator());
     api.putAccessToken('');
+    dispatch(hideLoading());
   };
 }
 

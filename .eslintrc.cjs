@@ -36,5 +36,7 @@ module.exports = {
         ignore: ['@tailwindcss/vite'],
       },
     ],
+    'no-underscore-dangle': 'off',
+    'object-curly-newline': 'off',
   },
 };

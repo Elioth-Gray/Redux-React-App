@@ -22,7 +22,7 @@ function asyncPreloadProcess() {
       const authUser = await api.getOwnProfile();
       dispatch(setAuthUserCreator(authUser));
     } catch (error) {
-      // Intentionally empty - errors in authentication are handled silently
+      // deliberately ignore error because user is not authenticated
     } finally {
       dispatch(setIsPreloadActionCreator(false));
     }
