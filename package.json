@@ -9,8 +9,8 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest",
-    "e2e": "cypress open",
-    "ci:test": "vitest --no-watch && start-server-and-test dev http-get://localhost:5173 e2e"
+    "e2e": "cypress run",
+    "ci:test": "vitest --no-watch && start-server-and-test dev http://localhost:5173 e2e"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
