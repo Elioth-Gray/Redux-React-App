@@ -8,7 +8,6 @@
  *   - Should call register function when register button is clicked
  */
 
-import React from 'react';
 import { describe, it, expect, afterEach, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -24,7 +23,7 @@ describe('RegisterInput component', () => {
 
   it('Should handle name typing correctly', async () => {
     // arrange
-    render(<RegisterInput login={() => {}}></RegisterInput>);
+    render(<RegisterInput login={() => {}} />);
     const nameInput = await screen.getByPlaceholderText('Nama Lengkap');
 
     // action
@@ -36,7 +35,7 @@ describe('RegisterInput component', () => {
 
   it('Should handle email typing correctly', async () => {
     // arrange
-    render(<RegisterInput register={() => {}}></RegisterInput>);
+    render(<RegisterInput register={() => {}} />);
     const emailInput = await screen.getByPlaceholderText('email@example.com');
 
     // action
@@ -48,7 +47,7 @@ describe('RegisterInput component', () => {
 
   it('Should handle password typing correctly', async () => {
     // arrange
-    render(<RegisterInput register={() => {}}></RegisterInput>);
+    render(<RegisterInput register={() => {}} />);
     const passwordInput = await screen.getByPlaceholderText('***********');
 
     // action
@@ -62,7 +61,7 @@ describe('RegisterInput component', () => {
     // arrange
     // mock login
     const mockRegister = vi.fn();
-    render(<RegisterInput register={mockRegister}></RegisterInput>);
+    render(<RegisterInput register={mockRegister} />);
     const nameInput = await screen.getByPlaceholderText('Nama Lengkap');
     await userEvent.type(nameInput, 'Budi Santoso');
     const emailInput = await screen.getByPlaceholderText('email@example.com');

@@ -7,7 +7,6 @@
  *   - Should call login function when login button is clicked
  */
 
-import React from 'react';
 import { describe, it, expect, afterEach, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -23,7 +22,7 @@ describe('LoginInput component', () => {
 
   it('Should handle email typing correctly', async () => {
     // arrange
-    render(<LoginInput login={() => {}}></LoginInput>);
+    render(<LoginInput login={() => {}} />);
     const emailInput = await screen.getByPlaceholderText('email@example.com');
 
     // action
@@ -35,7 +34,7 @@ describe('LoginInput component', () => {
 
   it('Should handle password typing correctly', async () => {
     // arrange
-    render(<LoginInput login={() => {}}></LoginInput>);
+    render(<LoginInput login={() => {}} />);
     const passwordInput = await screen.getByPlaceholderText('***********');
 
     // action
@@ -49,7 +48,7 @@ describe('LoginInput component', () => {
     // arrange
     // mock login
     const mockLogin = vi.fn();
-    render(<LoginInput login={mockLogin}></LoginInput>);
+    render(<LoginInput login={mockLogin} />);
     const emailInput = await screen.getByPlaceholderText('email@example.com');
     await userEvent.type(emailInput, 'email@test.com');
     const passwordInput = await screen.getByPlaceholderText('***********');

@@ -38,5 +38,15 @@ module.exports = {
     ],
     'no-underscore-dangle': 'off',
     'object-curly-newline': 'off',
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: [
+        '**/*.test.js',
+        '**/*.spec.js',
+        '**/*.test.jsx',
+        '**/*.spec.jsx',
+        '**/vite.config.js',
+        '**/vitest.setup.js',
+      ],
+    }],
   },
 };

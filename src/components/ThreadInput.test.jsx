@@ -8,13 +8,12 @@
  *   - Should call onCreate function when create button is clicked
  */
 
-import React from 'react';
 import { describe, it, expect, afterEach, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import * as matchers from '@testing-library/jest-dom/matchers';
-import ThreadInput from './Threadinput';
 import { BrowserRouter } from 'react-router-dom';
+import ThreadInput from './Threadinput';
 
 expect.extend(matchers);
 
@@ -33,7 +32,7 @@ describe('ThreadInput component', () => {
     // arrange
     render(
       <BrowserRouter>
-        <ThreadInput onCreate={() => {}} authUser={dummyUser}></ThreadInput>
+        <ThreadInput onCreate={() => {}} authUser={dummyUser} />
       </BrowserRouter>,
     );
     const titleInput = await screen.getByPlaceholderText('Judul threadmu...');
@@ -49,7 +48,7 @@ describe('ThreadInput component', () => {
     // arrange
     render(
       <BrowserRouter>
-        <ThreadInput onCreate={() => {}} authUser={dummyUser}></ThreadInput>
+        <ThreadInput onCreate={() => {}} authUser={dummyUser} />
       </BrowserRouter>,
     );
     const categoryInput = await screen.getByPlaceholderText(
@@ -67,7 +66,7 @@ describe('ThreadInput component', () => {
     // arrange
     render(
       <BrowserRouter>
-        <ThreadInput onCreate={() => {}} authUser={dummyUser}></ThreadInput>
+        <ThreadInput onCreate={() => {}} authUser={dummyUser} />
       </BrowserRouter>,
     );
     const contentInput = await screen.getByPlaceholderText('Tulis threadmu...');
@@ -84,7 +83,7 @@ describe('ThreadInput component', () => {
     const mockOnCreate = vi.fn();
     render(
       <BrowserRouter>
-        <ThreadInput onCreate={mockOnCreate} authUser={dummyUser}></ThreadInput>
+        <ThreadInput onCreate={mockOnCreate} authUser={dummyUser} />
       </BrowserRouter>,
     );
     const titleInput = await screen.getByPlaceholderText('Judul threadmu...');
