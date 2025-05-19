@@ -1,3 +1,11 @@
+/**
+ * text scenario for CommentInput component
+ *
+ * - RegisterInput component
+ *   - Should handle comment typing correctly
+ *   - Should call onCreateClick function when send button is clicked
+ */
+
 import { describe, it, expect, afterEach, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
