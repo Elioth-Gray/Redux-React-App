@@ -20,12 +20,12 @@ function Navbar() {
       <h1 className="text-3xl font-bold text-[#3498DB]">Threads Otot</h1>
       <ul className="flex flex-row justify-center items-center gap-22 h-full">
         <li>
-          <Link href="/" className="text-lg font-semibold">
+          <Link to="/" className="text-lg font-semibold">
             Home
           </Link>
         </li>
         <li>
-          <Link href="/leaderboards" className="text-lg font-semibold">
+          <Link to="/leaderboards" className="text-lg font-semibold">
             Leaderboards
           </Link>
         </li>
